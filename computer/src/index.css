@@ -1,0 +1,29 @@
+.hidden{
+ opacity: 0;
+}
+
+.fadeOut{
+  animation: fadeAway 2000 ease-in forwards;
+}
+
+.fadeIn{
+  animation: fadeTo 2000 ease-in forwards;
+}
+
+@keyframes fadeAway{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeTo{
+  from{
+   opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
