@@ -1,8 +1,18 @@
-import * as React from "react";
-import './Computer.css';
+import {useState, React} from "react";
+import './comp.css';
 
-const Comp = (props) => (
-  <div id = "comp">
+
+const Comp = (props) => {
+
+    const [isActive, setIsActive] = useState(false);
+    const ovalNotClicked = () => {
+       setIsActive(false);
+    };  
+    const ovalClicked = () => {
+       setIsActive(true);
+    };
+  return(
+<>
   <svg id = "computerAnimation"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -194,9 +204,8 @@ const Comp = (props) => (
         display: "inline",
       }}
     >
-      <ellipse id="EllipseNonGradient"
-        class = "clickMe" style={{
-          opacity: 0.77,
+      <ellipse id="EllipseNonGradient" 
+       onClick={ovalClicked}   className={`${isActive ? " fadeOut" : ""}`} style={{
           fill: "#0b0b5d",
           strokeWidth: 0.99667,
         }}
@@ -211,7 +220,7 @@ const Comp = (props) => (
         display: "inline",
       }}
     >
-      <text class = "clickMe"
+      <text className = "clickMe"
         xmlSpace="preserve"
         style={{
           fontStyle: "normal",
@@ -250,7 +259,6 @@ const Comp = (props) => (
     <ellipse id="leftCircle"
       className="hidden" style={{
         display: "inline",
-        opacity: 0.77,
         fill: "url(#f)",
         fillOpacity: 1,
         strokeWidth: 1.15912,
@@ -263,7 +271,6 @@ const Comp = (props) => (
     <ellipse  id="middleCircle"
       className="hidden" style={{
         display: "inline",
-        opacity: 0.77,
         fill: "url(#g)",
         fillOpacity: 1,
         strokeWidth: 1.15912,
@@ -281,7 +288,6 @@ const Comp = (props) => (
       <ellipse id="rightCircle"
        className="hidden" style={{
           display: "inline",
-          opacity: 0.77,
           fill: "url(#h)",
           fillOpacity: 1,
           strokeWidth: 1.15912,
@@ -315,13 +321,13 @@ const Comp = (props) => (
       />
     </g>
     <path id = "mouse_pointer"
-      className= "hidden" d="M8.801 5.578c.039 0 .077.012.106.035l1.885 1.491a.13.13 0 0 1 .051.101c0 .075-.068.136-.152.136h-.813l.391.696c.055.097.01.214-.098.263-.109.048-.24.009-.295-.088l-.4-.712-.57.578a.16.16 0 0 1-.113.046c-.084 0-.152-.06-.152-.14V5.72c0-.078.072-.141.16-.141z"
+       className={`${isActive ? " fadeIn" : "hidden"}`}   d="M8.801 5.578c.039 0 .077.012.106.035l1.885 1.491a.13.13 0 0 1 .051.101c0 .075-.068.136-.152.136h-.813l.391.696c.055.097.01.214-.098.263-.109.048-.24.009-.295-.088l-.4-.712-.57.578a.16.16 0 0 1-.113.046c-.084 0-.152-.06-.152-.14V5.72c0-.078.072-.141.16-.141z"
       style={{
         strokeWidth: 0.00649007,
       }}
     />
   </svg>
-  </div>
-)
+  </>
+);}
 
 export default Comp

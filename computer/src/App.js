@@ -1,8 +1,11 @@
 import React from 'react'
+import Comp from './comp/Comp';
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <Comp/>
+    </div>
   )
 }
 

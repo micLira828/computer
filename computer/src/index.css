@@ -2,13 +2,31 @@
  opacity: 0;
 }
 
-.fadeOut{
-  animation: fadeAway 2000 ease-in forwards;
+
+
+
+#mouse_pointer .fadeIn{
+  animation: fadeTo 1000s ease-in forwards;
 }
 
-.fadeIn{
-  animation: fadeTo 2000 ease-in forwards;
+.fadeOut{
+  animation: fadeAway 1000ms ease-in forwards;
 }
+
+
+
+#leftCircle .fadeIn{
+  animation: fadeTo 2000ms ease-in forwards;
+}
+
+#middleCircle .fadeIn{
+  animation: fadeTo 3000ms ease-in forwards;
+}
+
+#rightCircle .fadeIn{
+  animation: fadeTo 4000ms ease-in forwards;
+}
+
 
 @keyframes fadeAway{
   from{
