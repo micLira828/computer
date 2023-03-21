@@ -220,7 +220,7 @@ const Comp = (props) => {
         display: "inline",
       }}
     >
-      <text className = "clickMe"
+      <text className={`clickMe${isActive ? " fadeOut" : ""}`}
         xmlSpace="preserve"
         style={{
           fontStyle: "normal",
@@ -257,7 +257,7 @@ const Comp = (props) => {
       </text>
     </g>
     <ellipse id="leftCircle"
-      className="hidden" style={{
+       className="hidden"  style={{
         display: "inline",
         fill: "url(#f)",
         fillOpacity: 1,
@@ -269,7 +269,7 @@ const Comp = (props) => {
       ry={1.071}
     />
     <ellipse  id="middleCircle"
-      className="hidden" style={{
+       className="hidden"  style={{
         display: "inline",
         fill: "url(#g)",
         fillOpacity: 1,
